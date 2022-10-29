@@ -1,0 +1,56 @@
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			* {
+				margin: none;
+				padding: none;
+				box-sizing: border-box;
+			}
+			body {
+				/* background-color: #eee; */
+				display: grid;
+				place-items: center;
+			}
+			#mockup {
+				position: relative;
+				/* background-color: red; */
+			}
+			#mockup-img {
+				max-height: 80vh;
+				max-width: 80vw;
+			}
+			#text {
+				color: white;
+				font-family: poppins;
+				font-weight: bold;
+				text-transform: uppercase;
+				font-size: min(4vw, 4vh);
+				width: 30%;
+				/* background-color: blue; */
+				position: absolute;
+				line-height: 113%;
+				top: 28%;
+				left: 42%;
+				text-align: center;
+				transform: rotateY(-29deg) rotate(1deg);
+			}
+		</style>
+	</head>
+	<body>
+		<div id="mockup">
+			<div id="text">WhatsApp Software & API Setup</div>
+			<img id="mockup-img" src="mockup.png" alt="mockup" />
+		</div>
+		<script>
+			let params = new URLSearchParams(location.search);
+			let text = params.get("text");
+			if (text)
+				document.querySelector("#text").innerText = params.get("text");
+			else document.querySelector("#text").innerText = "Work with Manan";
+		</script>
+	</body>
+</html>
